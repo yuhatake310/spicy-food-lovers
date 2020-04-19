@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Button } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+    View,
+    StyleSheet,
+    TextInput,
+    Button,
+    AsyncStorage,
+} from 'react-native';
 import { emailLogin } from '../auth';
 
 const styles = StyleSheet.create({
@@ -36,6 +42,15 @@ const styles = StyleSheet.create({
 const LogInScreen = ({ navigation }) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+
+    useEffect(() => {
+        autoLogin();
+    }, []);
+
+    const autoLogin = async () => {
+        const isLogin = await AsyncStorage.getItem('isLogin');
+        isLogin ? navigation.navigate('tabHome') : console.log('false');
+    };
 
     return (
         <View style={styles.container}>
