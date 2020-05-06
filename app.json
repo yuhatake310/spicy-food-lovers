@@ -1,28 +1,25 @@
 {
-  "expo": {
-    "name": "spicy-food-lovers",
-    "slug": "spicy-food-lovers",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
+    "expo": {
+        "name": "spicy-food-lovers",
+        "slug": "spicy-food-lovers",
+        "platforms": ["ios", "android", "web"],
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/icon.png",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true
+        },
+        "extra": {
+            "gnaviApiKey": "60fc6042146e8117fadcbd40f4c9cf81"
+        }
     }
-  }
 }

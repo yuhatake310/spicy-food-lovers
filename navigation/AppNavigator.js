@@ -7,6 +7,8 @@ import HomeScreen from '../screens/HomeScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import LogInScreen from '../screens/LogInScreen';
 import SearchScreen from '../screens/SearchScreen';
+import GnaviCreditScreen from '../screens/GnaviCreditScreen';
+import StoreScreen from '../screens/StoreScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,6 +35,24 @@ const HomeStack = () => {
     );
 };
 
+const SearchStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Search"
+                component={SearchScreen}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Credit"
+                component={GnaviCreditScreen}
+                options={{ title: '' }}
+            />
+            <Stack.Screen name="Store" component={StoreScreen} />
+        </Stack.Navigator>
+    );
+};
+
 const screenOption = ({ route }) => ({
     tabBarIcon: ({ color, size }) => {
         let iconName;
@@ -47,8 +67,11 @@ const screenOption = ({ route }) => ({
 
 const tabHome = () => {
     return (
-        <Tab.Navigator screenOptions={screenOption}>
-            <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Navigator
+            screenOptions={screenOption}
+            tabBarOptions={{ showLabel: false }}
+        >
+            <Tab.Screen name="Search" component={SearchStack} />
         </Tab.Navigator>
     );
 };
