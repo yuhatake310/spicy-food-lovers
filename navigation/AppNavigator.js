@@ -9,6 +9,7 @@ import LogInScreen from '../screens/LogInScreen';
 import SearchScreen from '../screens/SearchScreen';
 import GnaviCreditScreen from '../screens/GnaviCreditScreen';
 import StoreScreen from '../screens/StoreScreen';
+import ClipScreen from '../screens/ClipScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -53,12 +54,32 @@ const SearchStack = () => {
     );
 };
 
+const ClipStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Clip"
+                component={ClipScreen}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Credit"
+                component={GnaviCreditScreen}
+                options={{ title: '' }}
+            />
+            <Stack.Screen name="Store" component={StoreScreen} />
+        </Stack.Navigator>
+    );
+};
+
 const screenOption = ({ route }) => ({
     tabBarIcon: ({ color, size }) => {
         let iconName;
 
         if (route.name === 'Search') {
             iconName = 'search';
+        } else if (route.name === 'Clip') {
+            iconName = 'bookmark';
         }
 
         return <FontAwesome name={iconName} size={size} color={color} />;
@@ -72,6 +93,7 @@ const tabHome = () => {
             tabBarOptions={{ showLabel: false }}
         >
             <Tab.Screen name="Search" component={SearchStack} />
+            <Tab.Screen name="Clip" component={ClipStack} />
         </Tab.Navigator>
     );
 };
