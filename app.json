@@ -16,7 +16,9 @@
         },
         "assetBundlePatterns": ["**/*"],
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": false,
+            "bundleIdentifier": "com.hatake.spicyfoodlovers",
+            "buildNumber": "1.0.0"
         },
         "extra": {
             "gnaviApiKey": "60fc6042146e8117fadcbd40f4c9cf81"
