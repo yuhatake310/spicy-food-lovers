@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, SafeAreaView, Text, Button } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    SafeAreaView,
+    Text,
+    Button,
+    TouchableOpacity,
+} from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -19,6 +26,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
+    },
+    link: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    linkText: {
+        fontSize: 18,
+        color: 'dodgerblue',
     },
     loginButton: {
         backgroundColor: '#FFFFFF',
@@ -66,6 +83,12 @@ const HomeScreen = ({ navigation }) => {
                     />
                 </View>
             </View>
+            <TouchableOpacity
+                style={styles.link}
+                onPress={() => navigation.navigate('tabHome')}
+            >
+                <Text style={styles.linkText}>ログインせずに利用する</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 };
